@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linja lili</title>
+    <style>
+      @font-face {
+        font-family: "linja lili";
+        src: url("../dist/linja lili.otf") format("opentype");
+      }
+
+      html {
+        font-family: 'linja lili';
+        font-style: normal;
+        font-size: 8px;
+        line-height: 1;
+        color: #323436;
+        background-color: #dfdfdf;
+      }
+
+      h1 {
+        font-size: 4rem;
+        font-weight: normal;
+      }
+
+      h2 {
+        font-size: 2rem;
+        font-family: sans-serif;
+      }
+
+      div {
+        margin: 5rem 0;
+      }
+
+      textarea {
+        width: 40em;
+        height: 6em;
+      }
+    </style>
+
+    <script type="module">
+      const textarea = document.getElementById('input')
+      const preview = document.getElementById('preview')
+
+      for (let i = 1; i <= 4; i++) {
+        const div = document.createElement('div')
+        div.style.fontSize = `${i}rem`
+
+        preview.append(div)
+      }
+
+      const update = () => {
+        for (const child of preview.children) {
+          child.innerText = textarea.value
+        }
+
+        localStorage.setItem('sample', textarea.value)
+      }
+
+      textarea.addEventListener('input', update)
+
+      const sample = localStorage.getItem('sample')
+      textarea.value = sample
+
+      update()
+    </script>
+  </head>
+
+  <body>
+    <h1>jan (nasa en monsuta o) li pali e lipu sitelen "linja lili"</h1>
+    <h2>Font "linja lili", by NemoStein</h2>
+    <textarea id="input"></textarea>
+    <div id="preview"></div>
+  </body>
+</html>

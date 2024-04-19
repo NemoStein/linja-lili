@@ -1,0 +1,22 @@
+{
+  "include": [
+    "./*.d.ts",
+    "./src/**/*.js",
+    "./tests/**/*.js",
+    "./glyph-data/metadata.js"
+  ],
+  "exclude": [
+    "./**/*.test.js"
+  ],
+  "compilerOptions": {
+    "checkJs": true,
+    "strict": true,
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true
+  }
+}
